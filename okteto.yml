@@ -1,0 +1,9 @@
+icon: https://apps.okteto.com/movies/icon.png
+
+eploy:
+  - name: Install Bitnami Charts
+    command: helm repo add bitnami https://charts.bitnami.com/bitnami
+  - name: Deploy PostgreSQL
+    command:  helm upgrade --install postgresql bitnami/postgresql -f postgresql/values.yml --version 10.16.2
+  - name: Deploy Kafka
+    command:  helm upgrade --install kafka bitnami/kafka -f kafka/values.yml --version 16.2.7
